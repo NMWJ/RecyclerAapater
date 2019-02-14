@@ -27,13 +27,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         EditText editText = findViewById(R.id.edit_query);
-
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<>();
-
+        
         adapter = new RecyclerAdapter<>(this, R.layout.item, list, new RecyclerAdapter.BindView<String>() {
             @Override
             public void bindView(RecyclerAdapter.ViewHolder holder, String obj, int position) {
@@ -42,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         recyclerView.setAdapter(adapter);
-
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
